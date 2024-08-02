@@ -1,0 +1,32 @@
+{
+  "root": true,
+  "project": {
+    "name": "careconnect",
+    "basePath": "/connect"
+  },
+  "api": {
+    "projectId": "3ijf7ttp",
+    "dataset": "production"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/components",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool"
+  ],
+  "env": {
+    "development": {
+      "api": {
+        "projectId": "3ijf7ttp",
+        "dataset": "production"
+      }
+    },
+    "production": {
+      "api": {
+        "projectId": "3ijf7ttp",
+        "dataset": "production"
+      }
+    }
+  }
+}
