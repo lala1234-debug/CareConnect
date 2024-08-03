@@ -11,7 +11,6 @@ import {
   TextField,
   Typography
 } from "@mui/material";
-import axios from 'axios';
 
 const romanianCounties = [
   'Alba', 'Arad', 'Argeș', 'Bacău', 'Bihor', 'Bistrița-Năsăud', 'Botoșani', 'Brașov', 'Brăila',
@@ -103,7 +102,7 @@ const Register = () => {
       isValid = false;
     }
     if (!formData.password) {
-      errors.password = 'Parola oblihgatorie';
+      errors.password = 'Parola obligatorie';
       isValid = false;
     } else if (!validatePassword(formData.password)) {
       errors.password = 'Parola trebuie să aibă cel puțin 8 caractere și să includă litere mari, litere mici, cifre și caractere speciale.';
@@ -114,7 +113,7 @@ const Register = () => {
       isValid = false;
     }
     if (!formData.userType) {
-      errors.userType = 'Tipul este obligatoriu';
+      errors.userType = 'Tipul utiliaztorului este obligatoriu';
       isValid = false;
     }
     if (!formData.phoneNumber) {
@@ -181,10 +180,21 @@ const Register = () => {
     <Box
       component="form"
       onSubmit={handleSubmit}
-      sx={{ width: 500, mx: 'auto', p: 2, display: 'flex', flexDirection: 'column', gap: 2 }}
+      sx={{
+        maxWidth: '600px',
+        margin: '0 auto',
+        padding: { xs: 2, sm: 4 },
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 2,
+        boxShadow: 3,
+        borderRadius: 2,
+        backgroundColor: 'background.paper'
+      }}
     >
+      <Button onClick={() => navigate('/')} color="primary">Inpoi la pagina de start</Button>
       <Typography variant="h6" gutterBottom>
-        Register
+        Inregistrare cont
       </Typography>
       <TextField
         label="Nume"
@@ -262,7 +272,7 @@ const Register = () => {
       />
 
       <FormControl fullWidth variant="outlined">
-        <InputLabel id="userType-label">User Type</InputLabel>
+        <InputLabel id="userType-label">Tipul utilizatorului</InputLabel>
         <Select
           labelId="userType-label"
           id="userType"
@@ -273,7 +283,7 @@ const Register = () => {
           error={Boolean(errors.userType)}
         >
           <MenuItem value="">
-            <em>Selecteaza tipul de user</em>
+            <em>Selecteaza tipul de utilizator</em>
           </MenuItem>
           {userTypes.map((type) => (
             <MenuItem key={type.value} value={type.value}>
@@ -363,7 +373,7 @@ const Register = () => {
         disabled={loading}
         fullWidth
       >
-        {loading ? 'Registering...' : 'Register'}
+        {loading ? 'Inregistrare...' : 'Creare cont'}
       </Button>
     </Box>
   );

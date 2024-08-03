@@ -34,8 +34,8 @@ const LoginPage = () => {
     }
   };
 
-  const openRegisterModal = () => {
-    setIsRegisterModalOpen(true);
+  const goToRegister = () => {
+    navigate('/register');
   };
 
   const closeRegisterModal = () => {
@@ -60,7 +60,8 @@ const LoginPage = () => {
         minHeight="100vh"
         textAlign="center"
       >
-        <Button onClick={() => navigate('/')} color="primary">Inpoi la pagina de start</Button>
+
+        <Button onClick={() => navigate('/')} color="primary" >Inpoi la pagina de start</Button>
             <form onSubmit={handleSubmit}>
               <Box mb={2} sx={{ width: '280px' }}>
                 <TextField
@@ -92,17 +93,17 @@ const LoginPage = () => {
                 </Box>
               )}
               <Button type="submit" fullWidth variant="contained" color="primary">
-                Login
+                Logare
               </Button>
             </form>
             <Box mt={2}>
-              <Button onClick={openRegisterModal} fullWidth variant="outlined" color="secondary">
-                Register
+              <Button onClick={goToRegister} fullWidth variant="outlined" color="secondary">
+                Ingregistreaza cont
               </Button>
             </Box>
             <Box mt={2}>
               <Button onClick={openRecoverPasswordModal} fullWidth variant="outlined" color="secondary">
-                Recover Password
+                Recupereaza Parola
               </Button>
             </Box>
             <ModalComponent isOpen={isRegisterModalOpen} onRequestClose={closeRegisterModal}>

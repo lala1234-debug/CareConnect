@@ -9,6 +9,7 @@ import {AuthProvider} from "./components/AuthContext";
 import AdminLoginPage from "./components/admin/AdminLoginPage";
 import AdminPage from "./components/admin/AdminPage";
 import UserList from "./components/UsersList";
+import HowToUsePage from "./components/HowToUsePage";
 
 function App() {
   return (
@@ -21,7 +22,9 @@ function App() {
           <Route path="/search/:userId" element={<SearchPage />} />
           <Route path="/admin" element={<AdminLoginPage />} />
           <Route path="/admin/user/:userId" element={<AdminPage />} />
-          <Route path="/user-list/:userId" element={<UserList />} /> {/* New route */}
+          <Route path="/user-list/:userId" element={<UserList />} />
+          <Route path="/how-to-use" element={<HowToUsePage />} />
+
         </Routes>
       </AuthProvider>
   );

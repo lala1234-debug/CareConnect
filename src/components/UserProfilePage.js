@@ -161,7 +161,7 @@ const UserProfilePage = () => {
             </Button>
           ) : (
             <Typography color="error" variant="body1" sx={{ marginTop: 2 }}>
-              Contul nu este aprobat! In asteptare.....
+              Contul tău va fi aprobat în termen de maxim 2 zile. Veti primi un email de confirmare odată ce contul va fi activat.
             </Typography>
           )}
         </Box>
